@@ -74,7 +74,7 @@ int DeleteSqListElem(SqList *sq_list, int location, int *num)
 {
 	if (location<1 || location>sq_list->length)
 		exit(EXIT_FAILURE);
-	sq_list->elem[location - 1] = *num;
+	*num = sq_list->elem[location - 1];
 	int *begin = sq_list->elem + location - 1;
 	int *end = sq_list->elem + sq_list->length - 1;
 	/*
