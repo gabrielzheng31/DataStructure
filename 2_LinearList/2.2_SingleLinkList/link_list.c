@@ -165,12 +165,15 @@ void DeleteElemByIndex(LinkList link_list, int i)
     LNode *p = link_list;
     int j = 0;
 
-    while(p&&j<i-1)
+    while(p->next&&j<i-1)
     {
         p=p->next;
         j++;
     }
-    
+
+    if(!(p->next))
+        exit(EXIT_FAILURE);
+
     LNode *q = p->next;
     p->next = q->next;
     free(q);
